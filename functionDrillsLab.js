@@ -136,9 +136,8 @@ const exclaimTwo = str => {
   return str.toUpperCase() + '!!!'
 }
 
-// arrow
-// declaration
-// expression
+// arrow - again, couldn't uncomment without issues...
+
 
 /*
   Rewrite exclaimTwo to be a single line.
@@ -147,6 +146,8 @@ const exclaimTwo = str => {
   Brownie points if you use a template string
 */
 
+const exclaimThree = str => `${str}!!!`
+console.log(exclaimThree(`It's working`))
 
 
 ////////////////// PROBLEM 9 ////////////////////
@@ -160,9 +161,8 @@ function exclaimFour(str) {
   return str.toUpperCase() + '!!!'
 }
 
-// arrow
 // declaration
-// expression
+
 
 
 ////////////////// PROBLEM 10 ////////////////////
@@ -175,6 +175,18 @@ function exclaimFour(str) {
 */
 
 //CODE HERE
+function nameCheck(name){
+  if(name === `Steven`){
+    return `What is up Steven?`
+  } else if (name === `Bryan`){
+    return `Hey Bryan!`
+  } else {
+    return `Cool name, ${name}`
+  }
+}
+
+var nameGreeting = nameCheck(`Bryan`)
+console.log(nameGreeting)
 
 
 ////////////////// PROBLEM 11 ////////////////////
@@ -188,6 +200,26 @@ function exclaimFour(str) {
 */
 
 //CODE HERE
+const faveColorFinder = (color) => {
+   var message
+  switch(color){
+    case `red`:
+      message = `Red is a great color`
+      break;
+    case `green`:
+      message = `Green is a solid favorite color`
+      break;
+    case `black`:
+      message = `So trendy`
+      break;
+    default:
+      message = `You need to evaluate your favotire color choice`
+  }
+  console.log(message)  
+
+}
+
+var colorRating = faveColorFinder(`red`)
 
 
 ////////////////// PROBLEM 12 ////////////////////
@@ -199,7 +231,12 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+function printAllNames(names){
+  for(let i = 0; i < names.length; i++){
+    console.log(names[i])
+  }
+}
+printAllNames(namesArr)
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -210,6 +247,17 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function thatsOdd(num){
+  if(num % 2 === 0){
+    return `That's not odd`
+  } else {
+    return `That is odd indeed!`
+  }
+}
+
+var oddChecker = thatsOdd(125)
+console.log(oddChecker)
+
 
 
 ////////////////// PROBLEM 14 ////////////////////
@@ -223,7 +271,8 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+const bestMovie = (movieTitle) => `${movieTitle} is the best movie ever!`
+console.log(bestMovie(`Dune`))
 
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -237,7 +286,20 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+function bigOrSmall(arr){
+  answers = []
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] > 100){
+      answers.push(`big`)
+    } else {
+      answers.push(`small`)
+    }
+  }
+  return answers
+}
 
+var arrayEvaluator = bigOrSmall(bigOrSmallArray)
+console.log(arrayEvaluator)
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -248,7 +310,15 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
-
+function theEliminator(contestants, loser){
+  for(let i = 0; i < contestants.length; i++){
+    if(contestants[i] === loser){
+      contestants.splice(i, 1)
+    }
+  }
+  return contestants
+}
+console.log(theEliminator(contestants, loser))
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -258,7 +328,11 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+const upperCaseFunc = (string) => {
+  console.log(string.toUpperCase())
+}
 
+upperCaseFunc(sampleString)
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -271,6 +345,18 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+const emailCheck = function(email){
+  String(email)
+  email = email.trim()
+  if(email.includes(`@`)){
+    return `Email verified`
+  } else {
+    return `must provide a valid email address`
+  }
+}
+
+console.log(emailCheck(`asb@gmail.com`))
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -278,6 +364,12 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+function buyTheLot(gold){
+  return gold / 3
+}
+
+var totalFrogs = buyTheLot(124)
+console.log(`I bought ${totalFrogs} with my gold`)
 
 
 ////////////////// PROBLEM 20 ////////////////////
@@ -286,6 +378,12 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+function buyTheLot2(gold){
+  return gold / 3
+}
+
+var totalFrogs2 = Math.floor(buyTheLot2(124))
+console.log(`I bought ${totalFrogs2} with my gold`)
 
 
 ////////////////// PROBLEM 21 ////////////////////
@@ -295,7 +393,22 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
+function isAssending(array){
+  var isAssending
+  var lastNum
+  for(let i = 1; i <= array.length; i++){
+    lastNum = array[i-1]
+    if(array[i] > lastNum && isAssending != false){
+      isAssending = true
+    } else {
+      isAssending = false
+    }
 
+  }
+  return isAssending
+}
+
+console.log(isAssending(sampleArray))
 
 ////////////////// PROBLEM 22 ////////////////////
 
@@ -319,13 +432,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = [`duck`]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = [`duck`, `rubberDuck`]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = [`duck`, `rubberDuck`, `sailorDuck`]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = [`duck, realDuck`]
